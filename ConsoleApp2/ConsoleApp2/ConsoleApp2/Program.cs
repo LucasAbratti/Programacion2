@@ -10,12 +10,15 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Seleccione un programa: [1] CombineStrings | [2] Fac | [3] Factorial");
+            Console.WriteLine("Seleccione un programa: [1] CombineStrings | [2] Fac | [3] Factorial | [4] Juego | [5] Messi");
             string seleccion = Console.ReadLine();
             
-            int numero, resultado;
+            int numero, resultado, numeroB, numeroC;
             string tempString;
-            
+            string pasos = "";
+
+            Console.Clear();
+
             switch (seleccion)
             {
                 case "1":
@@ -35,15 +38,9 @@ namespace ConsoleApp2
                         tempString = Console.ReadLine();
                     } while (!int.TryParse(tempString, out numero));
 
-                    try
-                    {
-                        Fac(numero, out resultado);
-                        Console.WriteLine($"El factorial de {numero} es {resultado}");
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine(e.Message);
-                    }
+                    Fac(numero, out resultado);
+                    Console.WriteLine($"El factorial de {numero} es {resultado}");
+                    
                     Console.ReadKey();
                     break;
                 case "3":
@@ -63,6 +60,46 @@ namespace ConsoleApp2
                         Console.WriteLine(e.Message);
                     }
                     Console.ReadKey();
+                    break;
+                case "4":
+                    do
+                    {
+                        Console.WriteLine("Ingrese el valor para la variable A:");
+                        tempString = Console.ReadLine();
+                    } while (!int.TryParse(tempString, out numero));
+                    do
+                    {
+                        Console.WriteLine("Ingrese el valor para la variable B:");
+                        tempString = Console.ReadLine();
+                    } while (!int.TryParse(tempString, out numeroB));
+                    do
+                    {
+                        Console.WriteLine("Ingrese el valor para la variable C:");
+                        tempString = Console.ReadLine();
+                    } while (!int.TryParse(tempString, out numeroC));
+
+                    resultado = Juego(numero, numeroB, numeroC, ref pasos);
+                    Console.WriteLine($"El resultado entre {numero} , {numeroB}, {numero} es {resultado}\n\n{pasos}");
+                    break;
+                case "5":
+                    do
+                    {
+                        Console.WriteLine("Ingrese el valor para la variable Suarez:");
+                        tempString = Console.ReadLine();
+                    } while (!int.TryParse(tempString, out numero));
+                    do
+                    {
+                        Console.WriteLine("Ingrese el valor para la variable Dibu:");
+                        tempString = Console.ReadLine();
+                    } while (!int.TryParse(tempString, out numeroB));
+                    do
+                    {
+                        Console.WriteLine("Ingrese el valor para la variable De Paul:");
+                        tempString = Console.ReadLine();
+                    } while (!int.TryParse(tempString, out numeroC));
+
+                    resultado = Messi(numero, numeroB, numeroC, ref pasos);
+                    Console.WriteLine($"El resultado entre {numero} , {numeroB}, {numero} es {resultado}\n\n{pasos}");
                     break;
             }
 
@@ -96,6 +133,32 @@ namespace ConsoleApp2
             else
             {
                 throw new Exception("El numero a calcular tiene que ser mayor que 0");
+            }
+        }
+
+        static int Juego(int a, int b, int c, ref string pasosJuego)
+        {
+            pasosJuego += $"{a.ToString().PadLeft(4)} {b.ToString().PadLeft(4)} {c.ToString().PadLeft(4)} |\n";
+            if (a + c > b)
+            {
+                return a + Juego(a - 2, c, b, ref pasosJuego);
+            }
+            else
+            {
+                return a + c;
+            }
+        }
+
+        static int Messi(int suarez, int dibu, int depaul, ref string pasosMessi)
+        {
+            pasosMessi += $"{suarez.ToString().PadLeft(4)} {dibu.ToString().PadLeft(4)} {depaul.ToString().PadLeft(4)} |\n";
+            if (suarez - depaul > 2)
+            {
+                return Messi(dibu - 1, depaul - 2, suarez, ref pasosMessi);
+            }
+            else
+            {
+                return depaul;
             }
         }
     }

@@ -1,0 +1,7 @@
+C:\Users\test\Facultad\Programacion2\ConsoleApp3\ConsoleApp3\obj\Debug\ConsoleApp3.csproj.AssemblyReference.cache
+C:\Users\test\Facultad\Programacion2\ConsoleApp3\ConsoleApp3\obj\Debug\ConsoleApp3.csproj.CoreCompileInputs.cache
+C:\Users\test\Facultad\Programacion2\ConsoleApp3\ConsoleApp3\bin\Debug\Calculadora.exe.config
+C:\Users\test\Facultad\Programacion2\ConsoleApp3\ConsoleApp3\bin\Debug\Calculadora.exe
+C:\Users\test\Facultad\Programacion2\ConsoleApp3\ConsoleApp3\bin\Debug\Calculadora.pdb
+C:\Users\test\Facultad\Programacion2\ConsoleApp3\ConsoleApp3\obj\Debug\Calculadora.exe
+C:\Users\test\Facultad\Programacion2\ConsoleApp3\ConsoleApp3\obj\Debug\Calculadora.pdb

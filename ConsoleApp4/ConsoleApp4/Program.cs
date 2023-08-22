@@ -78,16 +78,7 @@ namespace ConsoleApp4
 
                 Console.Clear();
 
-            } while (!quitProgram);
-
-
-
-
-
-
-
-        
-        
+            } while (!quitProgram);        
         }
     }
 }
